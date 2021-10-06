@@ -4,7 +4,12 @@ const getStudents = gql`
   {
     students {
       name
+      age
+      test1
       id
+      class{
+        name
+      }
     }
   }
 `;
@@ -31,4 +36,24 @@ const addStudentMutation = gql`
   }
 `;
 
-export { getClassesQuery, getStudents, addStudentMutation };
+const getStudentQuery = gql`
+  query($id: ID){
+    student(id: $id){
+      id
+      name
+      age
+      test1
+      class{
+        id
+        name
+        year
+        students{
+          name
+          id
+        }
+      }
+    }
+  }
+`
+
+export { getClassesQuery, getStudents, addStudentMutation, getStudentQuery };

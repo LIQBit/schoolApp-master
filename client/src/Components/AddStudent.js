@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
-import { getClassesQuery, addStudentMutation, getStudents } from "../queries";
+import { getClassesQuery, addStudentMutation, getStudents } from "../queries/index";
 
 const AddStudent = () => {
   const { data, loading, error } = useQuery(getClassesQuery);
