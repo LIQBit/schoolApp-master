@@ -9,7 +9,7 @@ const StudentDetails = (props)=> {
     
     
     return (
-        <div id="book-details">
+        <div id="student-details">
             <h2>Name: {props.student.name}</h2>
             <h3>Age: {props.student.age}</h3>
             <h3>Class: {props.student.class.name}</h3>
