@@ -1,6 +1,6 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
-import { getStudentQuery } from "../queries/index";
+//import { useQuery } from "@apollo/client";
+//import { getStudentQuery } from "../queries/index";
 
 
 const StudentDetails = (props)=> {
@@ -14,8 +14,6 @@ const StudentDetails = (props)=> {
             <h3>Age: {props.student.age}</h3>
             <h3>Class: {props.student.class.name}</h3>
             <h3>Test 1 Score: {props.student.test1}</h3>
-            
-            
         </div>
     )
 }

@@ -3,19 +3,23 @@ import { useQuery } from "@apollo/client";
 import { getStudents } from "../queries";
 import StudentDetails from "./StudentDetails";
 
+
 const StudentList = () => {
   const [student, setStudent] = useState("");
-
-  const handleClick = (student)=> {
-    console.log(student)
-    setStudent(student);
-  }
   
-
   const { loading, error, data } = useQuery(getStudents);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>;
 
+  const handleClick = (student)=> {
+    //console.log(student)
+  
+    setStudent(student);
+  };
+
+  
+
+  
   return (
     <div>
       <ul id="student-list">
@@ -23,7 +27,10 @@ const StudentList = () => {
           <li key={student.id} onClick={(e) => handleClick(student)}>{student.name}</li>
         ))}
       </ul>
-      <StudentDetails student={student} />
+      {
+        student ? <StudentDetails student={student} /> 
+        : <p>No Student Selected</p>
+      }
     </div>
   );
 };
