@@ -5,6 +5,30 @@ body {
     sans-serif;
 }
 
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  float: right;
+}
+
+.navlink {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+
 #main h1{
   color: #444;
   text-align: center;
@@ -78,6 +102,8 @@ form button{
   width: 40%;
   height: 100%;
   background: #AD1457;
+  margin-top: 125px;
+  margin-right: 8px;
   padding: 30px;
   overflow: auto;
   box-shadow: -2px -3px 5px rgba(0,0,0,0.3);

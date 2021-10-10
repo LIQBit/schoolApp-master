@@ -5,7 +5,7 @@ import React from "react";
 
 const StudentDetails = (props)=> {
    
-    console.log(props)
+    //console.log(props)
     
     
     return (

@@ -4,7 +4,7 @@ import { getStudents } from "../queries";
 import StudentDetails from "./StudentDetails";
 
 
-const StudentList = () => {
+const OneFE1List = () => {
   const [student, setStudent] = useState("");
   
   const { loading, error, data } = useQuery(getStudents);
@@ -34,9 +34,9 @@ console.log(filteredStudents);
   return (
     <div>
       <ul id="student-list">
-        {data.students.map((student) => (
-          <li key={student.id} onClick={(e) => handleClick(student)}>{student.name}</li>
-        ))}
+      {filteredStudents.map((f)=> (
+          <li key={f.id} onClick={(e) => handleClick(f)}>{f.name}</li>
+      ))}
         
       </ul>
       {
@@ -47,9 +47,4 @@ console.log(filteredStudents);
   );
 };
 
-export default StudentList;
-
-
-{/*{filteredStudents.map((f)=> (
-          <li key={f.id} onClick={(e) => handleClick(f)}>{f.name}</li>
-        ))}*/}
+export default OneFE1List;
