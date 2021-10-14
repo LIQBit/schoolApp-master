@@ -122,6 +122,28 @@ const Mutation = new GraphQLObjectType({
         return newclass.save();
       },
     },
+    editStudent: {
+      type: StudentType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLID)},
+        name: { type: GraphQLString },
+        age: { type: GraphQLString },
+        test1: { type: GraphQLString },
+        classId: { type: GraphQLID },
+      },
+      resolve(parent, args) {
+        return Student.findOneAndUpdate({_id: args.id}, { test1: args.test1, name: args.name}, { new: true})
+      }
+    },
+    deleteStudent: {
+      type: StudentType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLID)}
+      },
+      resolve(parent, args) {
+        return Student.findOneAndDelete({id: args.id});
+      }
+    }
   },
 });
 
