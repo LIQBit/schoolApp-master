@@ -56,7 +56,7 @@ nav li a:hover {
   color: #880E4F;
 }
 
-form{
+#add-student{
   background: #fff;
   padding: 20px;
   position: fixed;
@@ -82,7 +82,7 @@ form input, form select{
   box-sizing: border-box;
 }
 
-form button{
+#add-student button{
   color: #fff;
   font-size: 2em;
   background: #AD1457;
@@ -110,3 +110,9 @@ form button{
   box-sizing: border-box;
   color: #fff;
 }
+
+#edit-student button {
+  cursor: pointer;
+}
+
+

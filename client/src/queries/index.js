@@ -36,6 +36,31 @@ const addStudentMutation = gql`
   }
 `;
 
+const deleteStudentMutation = gql`
+  mutation deleteStudent(
+    $id: ID!
+  ) {
+    deleteStudent(id: $id){
+      id
+    }
+  }
+`;
+
+const editStudentMutation = gql`
+  mutation editStudent(
+    $id: ID!
+    $name: String!
+    $age: String!
+    $test1: String!
+  ) {
+    editStudent(id: $id, name: $name, age: $age, test1: $test1){
+      name
+      age
+      test1
+    }
+  }
+`;
+
 const getStudentQuery = gql`
   query($id: ID){
     student(id: $id){
@@ -56,4 +81,4 @@ const getStudentQuery = gql`
   }
 `
 
-export { getClassesQuery, getStudents, addStudentMutation, getStudentQuery };
+export { getClassesQuery, getStudents, addStudentMutation, getStudentQuery, deleteStudentMutation, editStudentMutation };

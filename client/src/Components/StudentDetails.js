@@ -1,21 +1,27 @@
 import React from "react";
-//import { useQuery } from "@apollo/client";
-//import { getStudentQuery } from "../queries/index";
+import { useEffect, useState } from "react";
+import { getStudentQuery } from "../queries";
+import { useQuery } from "@apollo/client";
+import DeleteStudent from "./DeleteStudent"
+import EditStudent from "./EditStudent";
 
 
-const StudentDetails = (props)=> {
-   
-    //console.log(props)
-    
+const StudentDetails = ( props )=> {
+    const {setStudent} = props.setStudent;
+    console.log("student details props",props);
     
     return (
-        <div id="student-details">
+        <div id="student-details" >
             <h2>Name: {props.student.name}</h2>
             <h3>Age: {props.student.age}</h3>
             <h3>Class: {props.student.class.name}</h3>
             <h3>Test 1 Score: {props.student.test1}</h3>
+            <EditStudent student={props.student} setStudent={props.setStudent} handleClick={props.handleClick}/>
+            <DeleteStudent student={props.student} setStudent={props.setStudent} />
         </div>
+        
     )
+    
 }
 
 export default StudentDetails;

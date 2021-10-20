@@ -9,6 +9,7 @@ import OneFE1List from "./Components/OneFE1List";
 import OneFE2List from "./Components/OneFE2List";
 import TwoFEList from "./Components/TwoFEList";
 import ThreeFEList from "./Components/ThreeFEList";
+import EditStudent from "./Components/EditStudent";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/3FE' component={ThreeFEList} />
         <AddStudent />
       </div>
+      
     </BrowserRouter>
   );
 }

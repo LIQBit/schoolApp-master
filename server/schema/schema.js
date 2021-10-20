@@ -129,7 +129,7 @@ const Mutation = new GraphQLObjectType({
         name: { type: GraphQLString },
         age: { type: GraphQLString },
         test1: { type: GraphQLString },
-        classId: { type: GraphQLID },
+        classId: { type: GraphQLID }
       },
       resolve(parent, args) {
         return Student.findOneAndUpdate({_id: args.id}, { test1: args.test1, name: args.name}, { new: true})

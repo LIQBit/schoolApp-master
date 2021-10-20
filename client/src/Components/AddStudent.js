@@ -14,13 +14,6 @@ const AddStudent = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>;
 
-  /*const handleSubmit = (e)=> {
-    e.preventDefault();
-    addstudent({
-      variables:{ name, age, classId },
-    });
-  };*/
-
   return (
     <form
       id="add-student"

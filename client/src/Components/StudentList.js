@@ -2,23 +2,24 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { getStudents } from "../queries";
 import StudentDetails from "./StudentDetails";
+import DeleteStudent from "./DeleteStudent";
+import EditStudent from "./EditStudent";
 
 
 const StudentList = () => {
-  const [student, setStudent] = useState("");
-  
+  const [selectedStudent, setSelectedStudent] = useState("");
+  console.log("studentList props", selectedStudent);
   const { loading, error, data } = useQuery(getStudents);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>;
 
   const handleClick = (student)=> {
-    //console.log(student)
-  
-    setStudent(student);
+    
+    setSelectedStudent(student);
   };
 let filteredStudents = [];
 
-//console.log(data.students)
+
 
 for(let i = 0; i < data.students.length; i++){
   //console.log(data.students[i].class.name)
@@ -28,10 +29,9 @@ for(let i = 0; i < data.students.length; i++){
   }
   
 }
-
-console.log(filteredStudents);
   
   return (
+    
     <div>
       <ul id="student-list">
         {data.students.map((student) => (
@@ -39,10 +39,15 @@ console.log(filteredStudents);
         ))}
         
       </ul>
-      {
-        student ? <StudentDetails student={student} /> 
-        : <p>No Student Selected</p>
-      }
+        <div>{
+          selectedStudent ? <div>
+            <StudentDetails student={selectedStudent} setStudent={setSelectedStudent} handleClick={handleClick}/>
+           </div>
+          : <p>No Student Selected</p>
+          
+        }
+        </div>
+      
     </div>
   );
 };
