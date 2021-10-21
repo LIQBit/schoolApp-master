@@ -111,7 +111,19 @@ form input, form select{
   color: #fff;
 }
 
+#edit-form {
+  position: absolute;
+  bottom: 145px;
+}
+
 #edit-student button {
+  cursor: pointer;
+}
+
+#delete-student {
+  position: absolute;
+  top: 2px;
+  right: 25px;
   cursor: pointer;
 }
 

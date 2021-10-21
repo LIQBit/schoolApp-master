@@ -7,14 +7,14 @@ const DeleteStudent = (selectedStudent) => {
     const [deleteStudent] = useMutation(deleteStudentMutation);
     //console.log(selectedStudent.student.student.id)
     return (
-        <div>
-            <button onClick={(e) => {
+        <div id="delete-function">
+            <h6 id="delete-student" onClick={(e) => {
                 e.preventDefault();
                 deleteStudent({
                     variables: { id: selectedStudent.student.student.id },
                     refetchQueries: [{ query: getStudents}],
                 });
-            }}>Delete Student</button>
+            }}>Delete Student</h6>
         </div>
     )
 

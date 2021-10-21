@@ -31,41 +31,46 @@ const EditStudent = ( props ) => {
 
     
     return (
-    
-        <form id="edit-student" 
-            onSubmit={(e) => {
-                e.preventDefault();
-                editStudent({
-                variables: {
-                    id: props.student.id,
-                    name: name,
-                    age: age,
-                    test1: test
-                },
-                refetchQueries: [{ query: getStudents}]
-                })
-                props.setStudent(thisStudent);
-                props.handleClick(thisStudent);
+        <div id="edit-form">
+            <h4>Edit Student</h4>
+            <form id="edit-student" 
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    editStudent({
+                    variables: {
+                        id: props.student.id,
+                        name: name,
+                        age: age,
+                        test1: test
+                    },
+                    refetchQueries: [{ query: getStudents}]
+                    })
+                    props.setStudent(thisStudent);
+                    props.handleClick(thisStudent);
+                    
+                }}>
                 
-            }}>
-            
-            <div className="field" onChange={(e) => setName(e.target.value)}>
-                <label>Student Name:</label>
-                <input type="text"
-                 value={name}/>
-            </div>
-            <div className="field" onChange={(e) => setAge(e.target.value)}>
-                <label>Age:</label>
-                <input type="text"
-                 value={age}/>
-            </div>
-            <div className="field" onChange={(e) => setTest(e.target.value)}>
-                <label>Test One:</label>
-                <input type="text"
-                 value={test}/>
-            </div>
-            <button type="submit" >submit</button>
+                <div className="field" onChange={(e) => setName(e.target.value)}>
+                    
+                    <input type="text"
+                    value={name}
+                    placeholder="Name"/>
+                </div>
+                <div className="field" onChange={(e) => setAge(e.target.value)}>
+                    
+                    <input type="text"
+                    value={age}
+                    placeholder="Age"/>
+                </div>
+                <div className="field" onChange={(e) => setTest(e.target.value)}>
+                    
+                    <input type="text"
+                    value={test}
+                    placeholder="Test 1 Score"/>
+                </div>
+                <button type="submit" >submit</button>
         </form>
+        </div>
     )
 }
 
