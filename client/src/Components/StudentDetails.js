@@ -17,7 +17,7 @@ const StudentDetails = ( props )=> {
             <h3>Class: {props.student.class.name}</h3>
             <h3>Test 1 Score: {props.student.test1}</h3>
             <EditStudent student={props.student} setStudent={props.setStudent} handleClick={props.handleClick}/>
-            <DeleteStudent student={props.student} setStudent={props.setStudent} />
+            <DeleteStudent id={props.id} student={props.student} setStudent={props.setStudent} />
         </div>
         
     )

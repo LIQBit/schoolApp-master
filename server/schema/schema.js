@@ -41,7 +41,7 @@ const StudentType = new GraphQLObjectType({
     class: {
       type: ClassType,
       resolve(parent, args) {
-        console.log(parent);
+        //console.log(parent);
         //return _.find(classes, {id: parent.classId})
         return Class.findById(parent.classId);
       },
@@ -104,7 +104,7 @@ const Mutation = new GraphQLObjectType({
           test1: args.test1,
           classId: args.classId,
         });
-        console.log(student);
+        //console.log(student);
         return student.save();
       },
     },
@@ -132,6 +132,7 @@ const Mutation = new GraphQLObjectType({
         classId: { type: GraphQLID }
       },
       resolve(parent, args) {
+        console.log("edit student args", args);
         return Student.findOneAndUpdate({_id: args.id}, { test1: args.test1, name: args.name}, { new: true})
       }
     },
@@ -141,7 +142,8 @@ const Mutation = new GraphQLObjectType({
         id: { type: new GraphQLNonNull(GraphQLID)}
       },
       resolve(parent, args) {
-        return Student.findOneAndDelete({id: args.id});
+        console.log("delete args",args)
+        return Student.findOneAndDelete({_id: args.id});
       }
     }
   },

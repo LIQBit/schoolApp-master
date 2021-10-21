@@ -6,28 +6,12 @@ import { editStudentMutation, getStudentQuery, getStudents } from "../queries/in
 
 
 const EditStudent = ( props ) => {
-    console.log("props", props)
+    //console.log("props", props)
     const [name, setName] = useState(); 
     const [age, setAge] = useState();
     const [test, setTest] = useState();
     const [editStudent] = useMutation(editStudentMutation);
     const thisStudent = {id: props.student.id, name: name, age: age, class: props.student.class, test1: test};
-
-    {/*const handleSubmit = (e) => {
-        e.preventDefault();
-        editStudent({
-            variables: {
-                id: selectedStudent.student.student.id,
-                name: name,
-                age: age,
-                test1: test
-            }
-        })
-        const aStudent = e.target.value;
-        console.log(aStudent)
-    setSelectedStudent(prevStudent => [...prevStudent, aStudent]);
-    }*/}
-
 
     
     return (

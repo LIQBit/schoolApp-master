@@ -17,6 +17,8 @@ const StudentList = () => {
     
     setSelectedStudent(student);
   };
+
+
 let filteredStudents = [];
 
 
@@ -41,7 +43,7 @@ for(let i = 0; i < data.students.length; i++){
       </ul>
         <div>{
           selectedStudent ? <div>
-            <StudentDetails student={selectedStudent} setStudent={setSelectedStudent} handleClick={handleClick}/>
+            <StudentDetails id={selectedStudent.id} student={selectedStudent} setStudent={setSelectedStudent} handleClick={handleClick}/>
            </div>
           : <p>No Student Selected</p>
           
@@ -53,8 +55,3 @@ for(let i = 0; i < data.students.length; i++){
 };
 
 export default StudentList;
-
-
-{/*{filteredStudents.map((f)=> (
-          <li key={f.id} onClick={(e) => handleClick(f)}>{f.name}</li>
-        ))}*/}
