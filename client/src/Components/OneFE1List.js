@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { getStudents } from "../queries";
-import StudentDetails from "./StudentDetails";
+import ClassStudentDetails from "./ClassStudentDetails";
 
 
 const OneFE1List = () => {
+  console.log()
   const [student, setStudent] = useState("");
   
   const { loading, error, data } = useQuery(getStudents);
@@ -29,7 +30,7 @@ for(let i = 0; i < data.students.length; i++){
   
 }
 
-console.log(filteredStudents);
+console.log(student);
   
   return (
     <div>
@@ -40,7 +41,7 @@ console.log(filteredStudents);
         
       </ul>
       {
-        student ? <StudentDetails student={student} /> 
+        student ? <ClassStudentDetails student={student} /> 
         : <p>No Student Selected</p>
       }
     </div>

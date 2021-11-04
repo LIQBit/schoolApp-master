@@ -12,7 +12,7 @@ const DeleteStudent = (props) => {
                 e.preventDefault();
                 deleteStudent({
                     variables: { id: props.id, key: props.id },
-                    refetchQueries: [{ query: getStudents}],
+                    refetchQueries: [{ query: getStudents}, { query: getStudentQuery}],
                 });
             }}>Delete Student</h6>
         </div>

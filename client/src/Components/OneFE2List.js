@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { getStudents } from "../queries";
-import StudentDetails from "./StudentDetails";
+import ClassStudentDetails from "./ClassStudentDetails";
 
 const OneFE2List = () => {
     const [student, setStudent] = useState("");
@@ -39,7 +39,7 @@ const OneFE2List = () => {
           
         </ul>
         {
-          student ? <StudentDetails student={student} /> 
+          student ? <ClassStudentDetails student={student} /> 
           : <p>No Student Selected</p>
         }
       </div>
