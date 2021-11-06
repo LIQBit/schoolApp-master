@@ -52,7 +52,7 @@ const EditStudent = ( props ) => {
                     value={test}
                     placeholder="Test 1 Score"/>
                 </div>
-                <button type="submit" >submit</button>
+                <button id="submit-button" type="submit" >submit</button>
         </form>
         </div>
     )

@@ -32,6 +32,8 @@ nav li a:hover {
 #main h1{
   color: #444;
   text-align: center;
+  text-align: left;
+  margin-left: 20px;
 }
 
 #main{
@@ -113,11 +115,14 @@ form input, form select{
 
 #edit-form {
   position: absolute;
-  bottom: 145px;
+  bottom: 40px;
 }
 
-#edit-student button {
+#submit-button {
   cursor: pointer;
+  color: black;
+  margin: -1px;
+  padding: 5px;
 }
 
 #delete-student {
@@ -127,4 +132,16 @@ form input, form select{
   cursor: pointer;
 }
 
+.class-buttons, button {
+  display: flex;
+  margin: 6px;
+  margin-left: -5px;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+}
 
+.main-buttons {
+  background-color: black;
+  cursor: pointer;
+}

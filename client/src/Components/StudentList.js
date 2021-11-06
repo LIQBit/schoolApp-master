@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { getStudents } from "../queries";
 import StudentDetails from "./StudentDetails";
+import NavBar from "./NavBar";
 
 
 const StudentList = () => {
@@ -23,48 +24,52 @@ const StudentList = () => {
     allStudents.push(data.students[i])
   }
 
-  
-  let oneFE1Students = [];
-  let oneFE2Students = [];
-  let twoFEStudents = [];
-  let threeFEStudents = [];
+  // Individual class list variables
+  let oneFE = [];
+  let oneFE2 = [];
+  let twoFE = [];
+  let threeFE = [];
   let classLists = 
       [ {name: "allStudents", members: allStudents},
-        {name: "oneFE1Students", members: oneFE1Students},
-        {name: "oneFE2Students", members: oneFE2Students},
-        {name: "twoFEStudents", members: twoFEStudents},
-        {name: "threeFEStudents", members: threeFEStudents}
+        {name: "oneFE", members: oneFE},
+        {name: "oneFE2", members: oneFE2},
+        {name: "twoFE", members: twoFE},
+        {name: "threeFE", members: threeFE}
         ];
 
 
   for(let i = 0; i < data.students.length; i++){
     if(data.students[i].class.name === "1FE1"){
-      oneFE1Students.push(data.students[i])
+      oneFE.push(data.students[i])
     } else if (data.students[i].class.name === "1FE2"){
-      oneFE2Students.push(data.students[i])
+      oneFE2.push(data.students[i])
     } else if (data.students[i].class.name === "2FE"){
-      twoFEStudents.push(data.students[i])
+      twoFE.push(data.students[i])
     } else if (data.students[i].class.name === "3FE"){
-      threeFEStudents.push(data.students[i])
+      threeFE.push(data.students[i])
     }
   }
   
   
   return (
-    
     <div>
-      {
-        classLists.map(classList => (
-          <button type="button"
-                  key={classList.name}
-                  onClick={()=> setList(classList.name)}
-          >
-          {classList.name}
-          </button>
-        ))
-      }
+      <div className="class-buttons">
+        {
+          classLists.map(classList => (
+            
+              <button type="button"
+                      className="main-buttons"
+                      key={classList.name}
+                      onClick={()=> setList(classList.name)}
+              >
+              {classList.name}
+              </button>
+          
+          ))
+        }
+      </div>
 
-      <div id="all-list">
+      <div className="class-list">
         {
           list === "allStudents"? 
           <ul id="student-list">
@@ -77,12 +82,12 @@ const StudentList = () => {
         }
       </div>
       
-      <div id="1fe-list">
+      <div className="class-list">
         {
-          list === "oneFE1Students"?
+          list === "oneFE"?
           <ul id="student-list">
           <h3>1FE1 Students</h3>
-          {oneFE1Students.map((student) => (
+          {oneFE.map((student) => (
             <li key={student.id} onClick={(e) => handleClick(student)}>{student.name}</li>
           ))}
         </ul>
@@ -91,12 +96,12 @@ const StudentList = () => {
         
       </div>
       
-      <div id="1fe2-list">
+      <div className="class-list">
         {
-          list === "oneFE2Students"?
+          list === "oneFE2"?
           <ul id="student-list">
           <h3>1FE2 Students</h3>
-          {oneFE2Students.map((student) => (
+          {oneFE2.map((student) => (
             <li key={student.id} onClick={(e) => handleClick(student)}>{student.name}</li>
           ))}
         </ul>
@@ -105,12 +110,12 @@ const StudentList = () => {
         
       </div>
       
-      <div id="2fe-list">
+      <div className="class-list">
         {
-          list === "twoFEStudents"?
+          list === "twoFE"?
           <ul id="student-list">
           <h3>2FE Students</h3>
-          {twoFEStudents.map((student) => (
+          {twoFE.map((student) => (
             <li key={student.id} onClick={(e) => handleClick(student)}>{student.name}</li>
           ))}
         </ul>
@@ -118,12 +123,12 @@ const StudentList = () => {
         }  
       </div>
       
-      <div id="3fe-list">
+      <div className="class-list">
         {
-          list === "threeFEStudents"?
+          list === "threeFE"?
           <ul id="student-list">
           <h3>3FE Students</h3>
-          {threeFEStudents.map((student) => (
+          {threeFE.map((student) => (
             <li key={student.id} onClick={(e) => handleClick(student)}>{student.name}</li>
           ))}
         </ul>

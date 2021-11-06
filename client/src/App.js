@@ -18,15 +18,16 @@ import EditStudent from "./Components/EditStudent";
 function App() {
 
     return (
-
+    
       <BrowserRouter >
-      <NavBar />
         <div id="main">
+          <h1>Student Tracker</h1>
+          <StudentList />
           <Route path='/AllStudents' component={StudentList} />
           {/*<Route path='/1FE1' component={OneFE1List} />
           <Route path='/1FE2' component={OneFE2List } />
           <Route path='/2FE' component={TwoFEList} />
-    <Route path='/3FE' component={ThreeFEList} />*/}
+          <Route path='/3FE' component={ThreeFEList} />*/}
           <AddStudent />
         </div>
       
