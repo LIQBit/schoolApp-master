@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { getStudents } from "../queries";
 import StudentDetails from "./StudentDetails";
-import NavBar from "./NavBar";
+
 
 
 const StudentList = () => {

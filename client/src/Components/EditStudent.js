@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useMutation, useQuery } from "@apollo/react-hooks";
-//import { getStudents } from "../queries";
-import StudentDetails from "./StudentDetails";
-import { editStudentMutation, getStudentQuery, getStudents } from "../queries/index";
+import React, { useState } from "react";
+import { useMutation } from "@apollo/react-hooks";
+import { editStudentMutation, getStudents } from "../queries/index";
 
 
 const EditStudent = ( props ) => {

@@ -1,7 +1,4 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { getStudentQuery } from "../queries";
-import { useQuery } from "@apollo/client";
 import DeleteStudent from "./DeleteStudent"
 import EditStudent from "./EditStudent";
 
