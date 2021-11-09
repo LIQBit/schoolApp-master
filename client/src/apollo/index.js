@@ -1,4 +1,5 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
+//import { ApolloClient, InMemoryCache } from '@apollo/react-hooks';
 
 //Apollo client setup
 export const client = new ApolloClient({

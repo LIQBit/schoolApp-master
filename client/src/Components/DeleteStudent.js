@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
-import { useQuery, useMutation } from "@apollo/react-hooks";
-import { getClassesQuery, addStudentMutation, getStudents, deleteStudentMutation, getStudentQuery } from "../queries/index";
+import React from "react";
+import { useMutation } from "@apollo/client";
+import { getStudents, deleteStudentMutation, getStudentQuery } from "../queries/index";
 
 const DeleteStudent = (props) => {
     
