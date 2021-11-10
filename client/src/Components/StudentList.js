@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
-//import { useQuery } from "@apollo/react-hooks";
 import { getStudents } from "../queries";
 import StudentDetails from "./StudentDetails";
 
