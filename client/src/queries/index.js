@@ -49,9 +49,9 @@ const deleteStudentMutation = gql`
 const editStudentMutation = gql`
   mutation editStudent(
     $id: ID!
-    $name: String!
-    $age: String!
-    $test1: String!
+    $name: String
+    $age: String
+    $test1: String
   ) {
     editStudent(id: $id, name: $name, age: $age, test1: $test1){
       name
