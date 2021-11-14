@@ -11,26 +11,30 @@ const EditStudent = ( props ) => {
     const [editStudent] = useMutation(editStudentMutation);
     const thisStudent = {id: props.student.id, name: name, age: age, class: props.student.class, test1: test};
 
+    const clickHandler = (e) => {
+        e.preventDefault();
+        editStudent({
+            variables: {
+                id: props.student.id,
+                name: name,
+                age: age,
+                test1: test
+            },
+            refetchQueries: [{ query: getStudents}]
+            });
+            props.setStudent(thisStudent);
+            props.handleClick(thisStudent);
+            setName("");
+            setAge("");
+            setTest("");
+    }
+
     
     return (
         <div id="edit-form">
             <h4>Edit Student</h4>
             <form id="edit-student" 
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    editStudent({
-                    variables: {
-                        id: props.student.id,
-                        name: name,
-                        age: age,
-                        test1: test
-                    },
-                    refetchQueries: [{ query: getStudents}]
-                    })
-                    props.setStudent(thisStudent);
-                    props.handleClick(thisStudent);
-                    
-                }}>
+                onSubmit={clickHandler}>
                 
                 <div className="field" onChange={(e) => setName(e.target.value)}>
                     
